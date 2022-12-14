@@ -1,4 +1,4 @@
-.rules-body, .container, .score-area .score-board, .game-area .select-stage .choose, .game-area .result-stage .player-col, .game-area .result-stage .player-col .result-choose, .choose-bg {
+.rules-body, .container, .score-area .score-board, .game-area .select-stage, .game-area .select-stage .choose, .game-area .result-stage .player-col, .game-area .result-stage .player-col .result-choose, .choose-bg {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -55,6 +55,9 @@
 .container {
   background-image: Radial-Gradient(circle at top, #1f3756, #141539);
   height: 100vh;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 }
 
 .container .rules-btn {
@@ -76,21 +79,27 @@
 
 .score-area {
   position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  top: 50px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  margin-top: 50px;
   padding: 10px;
   width: calc(100% - 100px);
   border-radius: 10px;
   border: solid 3px #606e85;
   height: 110px;
+}
+
+@media screen and (min-width: 700px) {
+  .score-area {
+    max-width: 1000px;
+  }
 }
 
 .score-area img {
@@ -118,6 +127,10 @@
 }
 
 .game-area .select-stage {
+  height: 100vh;
+}
+
+.game-area .select-stage .pentagon-container {
   position: relative;
 }
 
@@ -144,9 +157,10 @@
 .game-area .result-stage {
   position: fixed;
   top: 160px;
-  left: 50px;
+  left: 0;
+  padding: 0 50px;
   bottom: 40%;
-  width: calc(100% - 100px);
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -159,10 +173,22 @@
           justify-content: space-between;
 }
 
+@media screen and (min-width: 700px) {
+  .game-area .result-stage {
+    position: relative;
+    height: 100%;
+    top: auto;
+    left: auto;
+    background-color: red;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    bottom: 15%;
+  }
+}
+
 .game-area .result-stage .player-col {
-  -webkit-box-align: space-between;
-      -ms-flex-align: space-between;
-          align-items: space-between;
+  position: relative;
 }
 
 .game-area .result-stage .player-col .result-choose {
@@ -172,12 +198,14 @@
 }
 
 .game-area .result-stage .player-col .player-name {
+  font-size: 1rem;
   color: white;
   position: absolute;
-  bottom: 10%;
+  top: calc(50% + 80px);
 }
 
 .game-area .result-stage .game-status {
+  text-align: center;
   color: white;
   font-size: 2.5rem;
   position: fixed;
@@ -185,6 +213,24 @@
   width: 240px;
   height: calc(40vh - 14%);
   top: 60%;
+}
+
+@media screen and (min-width: 700px) {
+  .game-area .result-stage .game-status {
+    position: relative;
+    top: auto;
+    left: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
 }
 
 .game-area .result-stage .game-status .restart-btn {

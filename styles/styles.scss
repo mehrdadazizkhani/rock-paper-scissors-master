@@ -1,6 +1,8 @@
 @import "rules";
 @import "colors";
-@import "queries";
+@import "media-queries";
+
+$circleRadius: 52px;
 
 * {
     box-sizing: border-box;
@@ -12,9 +14,11 @@
 }
 
 .container {
+
     background-image: Radial-Gradient(circle at top ,hsl(214, 47%, 23%), hsl(237, 49%, 15%));
     height: 100vh;
     @extend %align-center;
+    justify-content: flex-start;
 
     .rules-btn {
         position: fixed;
@@ -36,15 +40,19 @@
 
 .score-area {
     position: fixed;
+    display: flex;
     align-items: center;
     justify-content: space-between;
-    top: 50px;
-    display: flex;
+    margin-top: 50px;
     padding: 10px;
     width: calc(100% - 100px);
     border-radius: 10px;
     border: solid 3px $light;
     height: 110px;
+    
+    @include desktop {
+        max-width: 1000px;
+    }
 
     img {
         height: 80%;
@@ -74,8 +82,17 @@
 
 .game-area {
     
+
+ 
+
     .select-stage {
-        position: relative;
+        // display: none;
+        height: 100vh;
+        @extend %align-center;
+        
+        .pentagon-container {
+            position: relative;
+        }
 
         .pentagon {
             width: 235px;
@@ -85,7 +102,7 @@
         .choose {
             @extend %align-center;
             position: absolute;
-            width: 104px;
+            width: 2 * $circleRadius;
             aspect-ratio: 1/1;
             background-color: white;
             border-radius: 50%;
@@ -100,18 +117,32 @@
     }
 
     .result-stage {
+        
         position: fixed;
         top: 160px;
-        left: 50px;
+        left: 0;
+        padding: 0 50px;
         bottom: 40%;
-        width: calc(100% - 100px);
+        width: 100%;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        
+           
+        @include desktop {
+            position: relative;
+            height: 100%;
+            top: auto;
+            left: auto;
+            background-color: red;
+            align-items: center;
+            bottom: 15%;
+            
+        }
 
         .player-col {
+            position: relative;
             @extend %align-center;
-            align-items: space-between;
 
             .result-choose {
                 @extend %align-center;
@@ -119,15 +150,17 @@
                 aspect-ratio: 1/1;
                 border-radius: 50%;
             }
-
+            
             .player-name {
+                font-size: 1rem;
                 color: white;
                 position: absolute;
-                bottom: 10%;
+                top: calc(50% + 80px);
             }
         }
 
         .game-status {
+            text-align: center;
             color: white;
             font-size: 2.5rem;
             position: fixed;
@@ -135,6 +168,15 @@
             width: 240px;
             height: calc(40vh - 14%);
             top: 60%;
+
+            @include desktop {
+                position: relative;
+                top: auto;
+                left: auto;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
 
             .restart-btn {
                 color: $dark;
@@ -162,36 +204,36 @@
 }
 
 .scissors {
-    top: calc(2% - 52px);
-    left: calc(49% - 52px);
+    top: calc(2% - #{$circleRadius});
+    left: calc(49% - #{$circleRadius});
     background-image: linear-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%));
     box-shadow: inset 0px -3px 1px 1px hsl(40, 84%, 43%);
 }
 
 .spock {
-    top: calc(40% - 52px);
-    left: calc(0% - 52px);
+    top: calc(40% - #{$circleRadius});
+    left: calc(0% - #{$circleRadius});
     background-image: linear-gradient(hsl(189, 59%, 53%), hsl(189, 58%, 57%));
     box-shadow: inset 0px -3px 1px 1px hsl(189, 58%, 37%);
 }
 
 .paper {
-    top: calc(40% - 52px);
-    left: calc(99% - 52px);
+    top: calc(40% - #{$circleRadius});
+    left: calc(99% - #{$circleRadius});
     background-image: linear-gradient(hsl(230, 89%, 62%), hsl(230, 89%, 65%));
     box-shadow: inset 0px -3px 1px 1px hsl(230, 89%, 56%);
 }
 
 .lizard {
-    top: calc(97% - 52px);
-    left: calc(19% - 52px);
+    top: calc(97% - #{$circleRadius});
+    left: calc(19% - #{$circleRadius});
     background-image: linear-gradient(hsl(261, 73%, 60%), hsl(261, 72%, 63%));
     box-shadow: inset 0px -3px 1px 1px hsl(261, 72%, 43%);
 }
 
 .rock {
-    top: calc(97% - 52px);
-    left: calc(79% - 52px);
+    top: calc(97% - #{$circleRadius});
+    left: calc(79% - #{$circleRadius});
     background-image: linear-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%));
     box-shadow: inset 0px -3px 1px 1px hsl(349, 70%, 36%);
 }

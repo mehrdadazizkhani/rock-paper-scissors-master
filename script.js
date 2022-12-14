@@ -9,6 +9,7 @@ const selectStage = document.querySelector('.select-stage')
 const resultStage = document.querySelector('.result-stage')
 const scoreBoard = document.querySelector('.score-board')
 const scoreDisplay = document.querySelector('.score')
+const gameStatus = document.querySelector('.status')
 
 let playerChooseClass
 let houseChooseClass
@@ -46,10 +47,13 @@ function resultHandler (event) {
 
     playerChoose.children[0].appendChild(circles[event.target.id].cloneNode(true))
     houseChoose.children[0].appendChild(circles[randomNumber].cloneNode(true))
+
+    winner()
+    scoreDisplay.innerHTML = score
 }
 
 function restartHandler () {
-    selectStage.style.display = "block";
+    selectStage.style.display = "flex";
     resultStage.style.display = "none";
 
     playerChoose.classList.remove(playerChooseClass)
@@ -64,5 +68,51 @@ function resetScore () {
     scoreDisplay.innerHTML = 0
 }
 
+function winner () {
 
+    if (playerChooseClass == houseChooseClass) {
+        gameStatus.innerHTML = "tie"
+    } else if (playerChooseClass == "scissors") {
+        if (houseChooseClass == "paper" || houseChooseClass == "lizard") {
+            gameStatus.innerHTML = "you win"
+            score++
+        } else {
+            gameStatus.innerHTML = "you lose"
+            score--
+        }
+    } else if (playerChooseClass == "paper") {
+        if (houseChooseClass == "spock" || houseChooseClass == "rock") {
+            gameStatus.innerHTML = "you win"
+            score++
+        } else {
+            gameStatus.innerHTML = "you lose"
+            score--
+        }
+    } else if (playerChooseClass == "rock") {
+        if (houseChooseClass == "scissors" || houseChooseClass == "lizard") {
+            gameStatus.innerHTML = "you win"
+            score++
+        } else {
+            gameStatus.innerHTML = "you lose"
+            score--
+        }
+    } else if (playerChooseClass == "lizard") {
+        if (houseChooseClass == "spock" || houseChooseClass == "paper") {
+            gameStatus.innerHTML = "you win"
+            score++
+        } else {
+            gameStatus.innerHTML = "you lose"
+            score--
+        }
+    } else if (playerChooseClass == "spock") {
+        if (houseChooseClass == "scissors" || houseChooseClass == "rock") {
+            gameStatus.innerHTML = "you win"
+            score++
+        } else {
+            gameStatus.innerHTML = "you lose"
+            score--
+        }
+    }
+
+}
 
