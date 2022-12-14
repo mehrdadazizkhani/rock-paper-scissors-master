@@ -1,4 +1,4 @@
-.rules-body, .container, .score-area .score-board, .score-area .display-hint, .game-area .select-stage, .game-area .select-stage .choose, .game-area .result-stage .player-col, .game-area .result-stage .player-col .result-choose, .choose-bg {
+.rules-container, .container, .score-area .score-board, .score-area .display-hint, .game-area .select-stage, .game-area .select-stage .choose, .game-area .result-stage .player-col, .game-area .result-stage .player-col .result-choose, .choose-bg {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -14,7 +14,7 @@
           align-items: center;
 }
 
-.rules-body {
+.rules-container {
   background-color: white;
   color: #3b4363;
   position: fixed;
@@ -24,7 +24,43 @@
   width: 100vw;
 }
 
-.rules-body .rules-title {
+@media screen and (min-width: 700px) {
+  .rules-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 460px;
+    height: 500px;
+    padding: 50px;
+    border-radius: 20px;
+    left: calc(50% - 230px);
+    top: calc(50% - 250px);
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .rules-container .rules-header {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+.rules-container .rules-title {
   position: fixed;
   top: 15%;
   left: calc(50% - 50px);
@@ -34,12 +70,28 @@
   text-align: center;
 }
 
-.rules-body .close-btn {
+@media screen and (min-width: 700px) {
+  .rules-container .rules-title {
+    position: relative;
+    bottom: auto;
+    left: auto;
+  }
+}
+
+.rules-container .close-btn {
   cursor: pointer;
   position: fixed;
   bottom: 8%;
   width: 22px;
   left: calc(50% - 11px);
+}
+
+@media screen and (min-width: 700px) {
+  .rules-container .close-btn {
+    position: relative;
+    bottom: auto;
+    left: auto;
+  }
 }
 
 * {
@@ -194,7 +246,6 @@
 }
 
 .game-area .select-stage {
-  display: none;
   height: 100vh;
 }
 
@@ -275,6 +326,12 @@
   border-radius: 50%;
 }
 
+@media screen and (min-width: 700px) {
+  .game-area .result-stage .player-col .result-choose {
+    width: 160px;
+  }
+}
+
 .game-area .result-stage .player-col .player-name {
   width: -webkit-max-content;
   width: -moz-max-content;
@@ -283,6 +340,12 @@
   color: white;
   position: absolute;
   top: calc(50% + 80px);
+}
+
+@media screen and (min-width: 700px) {
+  .game-area .result-stage .player-col .player-name {
+    top: calc(50% + 100px);
+  }
 }
 
 .game-area .result-stage .game-status {

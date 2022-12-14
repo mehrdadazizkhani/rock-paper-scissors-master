@@ -11,6 +11,8 @@ const scoreBoard = document.querySelector('.score-board')
 const scoreDisplay = document.querySelector('.score')
 const gameStatus = document.querySelector('.status')
 const displayHint = document.querySelector('.display-hint')
+const winSound = new Audio('./soundeffects/win.mp3')
+const loseSound = new Audio('./soundeffects/lose.mp3')
 
 let playerChooseClass
 let houseChooseClass
@@ -20,7 +22,7 @@ let houseChooses = ["scissors", "spock", "paper", "lizard", "rock"]
 
 
 rules.classList.add("hide")
-// resultStage.style.display = "none";
+resultStage.style.display = "none";
 
 rulesBtn.addEventListener("click", rulesOpenHandler)
 closeBtn.addEventListener("click", rulesCloseHandler)
@@ -78,41 +80,51 @@ function winner () {
         gameStatus.innerHTML = "tie"
     } else if (playerChooseClass == "scissors") {
         if (houseChooseClass == "paper" || houseChooseClass == "lizard") {
+            winSound.play()
             gameStatus.innerHTML = "you win"
             score++
         } else {
+            loseSound.play()
             gameStatus.innerHTML = "you lose"
             score--
         }
     } else if (playerChooseClass == "paper") {
         if (houseChooseClass == "spock" || houseChooseClass == "rock") {
+            winSound.play()
             gameStatus.innerHTML = "you win"
             score++
         } else {
+            loseSound.play()
             gameStatus.innerHTML = "you lose"
             score--
         }
     } else if (playerChooseClass == "rock") {
         if (houseChooseClass == "scissors" || houseChooseClass == "lizard") {
+            winSound.play()
             gameStatus.innerHTML = "you win"
             score++
         } else {
+            loseSound.play()
             gameStatus.innerHTML = "you lose"
             score--
         }
     } else if (playerChooseClass == "lizard") {
         if (houseChooseClass == "spock" || houseChooseClass == "paper") {
+            winSound.play()
             gameStatus.innerHTML = "you win"
             score++
         } else {
+            loseSound.play()
             gameStatus.innerHTML = "you lose"
             score--
         }
     } else if (playerChooseClass == "spock") {
         if (houseChooseClass == "scissors" || houseChooseClass == "rock") {
+            winSound.play()
             gameStatus.innerHTML = "you win"
             score++
         } else {
+            loseSound.play()
             gameStatus.innerHTML = "you lose"
             score--
         }

@@ -112,7 +112,6 @@
     }
 
     .select-stage {
-        display: none;
         height: 100vh;
         @extend %align-center;
 
@@ -153,7 +152,6 @@
     }
 
     .result-stage {
-        
         position: fixed;
         top: 160px;
         left: 0;
@@ -182,6 +180,10 @@
                 width: 120px;
                 aspect-ratio: 1/1;
                 border-radius: 50%;
+
+                @include desktop {
+                    width: 160px;
+                }
             }
             
             .player-name {
@@ -190,6 +192,10 @@
                 color: white;
                 position: absolute;
                 top: calc(50% + 80px);
+                
+                @include desktop {
+                    top: calc(50% + 100px);
+                }
             }
         }
 
