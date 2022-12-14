@@ -1,0 +1,38 @@
+@import 'colors';
+
+%align-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.rules-body {
+    background-color: white;
+    color: $dark;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    @extend %align-center;
+
+
+    .rules-title {
+        position: fixed;
+        top: 15%;
+        left: calc(50% - 50px);
+        width: 100px;
+        font-size: 2rem;
+        font-weight: 700;
+        text-align: center;
+    }
+
+    .close-btn {
+        cursor: pointer;
+        position: fixed;
+        bottom: 8%;
+        width: 22px;
+        left: calc(50% - 11px);
+    }
+}

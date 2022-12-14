@@ -1,0 +1,197 @@
+@import "rules";
+@import "colors";
+@import "queries";
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.container {
+    background-image: Radial-Gradient(circle at top ,hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+    height: 100vh;
+    @extend %align-center;
+
+    .rules-btn {
+        position: fixed;
+        bottom: 8%;
+        font-size: 1.1rem;
+        width: 130px;
+        height: 40px;
+        background-color: transparent;
+        color: white;
+        border-radius: 10px;
+        border: 1px solid white;
+        cursor: pointer;
+    }
+}
+
+.hide {
+    display: none;
+}
+
+.score-area {
+    position: fixed;
+    align-items: center;
+    justify-content: space-between;
+    top: 50px;
+    display: flex;
+    padding: 10px;
+    width: calc(100% - 100px);
+    border-radius: 10px;
+    border: solid 3px $light;
+    height: 110px;
+
+    img {
+        height: 80%;
+        aspect-ratio: 1/1;
+    }
+
+    .score-board {
+        cursor: pointer;
+        background-color: white;
+        height: 100%;
+        aspect-ratio: 1/1;
+        border-radius: 5px;
+        @extend %align-center;
+    }
+
+    .score-title {
+        font-size: 0.7rem;
+        color: $accent;
+    }
+    
+    .score {
+        font-size: 2.2rem;
+        font-weight: 700;
+        color: $dark;
+    }
+}
+
+.game-area {
+    
+    .select-stage {
+        position: relative;
+
+        .pentagon {
+            width: 235px;
+            aspect-ratio: 1/1;
+        }
+        
+        .choose {
+            @extend %align-center;
+            position: absolute;
+            width: 104px;
+            aspect-ratio: 1/1;
+            background-color: white;
+            border-radius: 50%;
+            cursor: pointer;
+
+            img {
+                transform: scale(0.7);
+                background-color: white;
+            }
+        }
+
+    }
+
+    .result-stage {
+        position: fixed;
+        top: 160px;
+        left: 50px;
+        bottom: 40%;
+        width: calc(100% - 100px);
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .player-col {
+            @extend %align-center;
+            align-items: space-between;
+
+            .result-choose {
+                @extend %align-center;
+                width: 150px;
+                aspect-ratio: 1/1;
+                border-radius: 50%;
+            }
+
+            .player-name {
+                color: white;
+                position: absolute;
+                bottom: 10%;
+            }
+        }
+
+        .game-status {
+            color: white;
+            font-size: 2.5rem;
+            position: fixed;
+            left: calc(50% - 120px);
+            width: 240px;
+            height: calc(40vh - 14%);
+            top: 60%;
+
+            .restart-btn {
+                color: $dark;
+                letter-spacing: 0.2rem;
+                width: 100%;
+                height: 50px;
+                font-size: 1.2rem;
+                font-weight: 600;
+                border-radius: 10px;
+                margin-top: 15px;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+
+.choose-bg {
+    @extend %align-center;
+    background-color: white;
+    width:75%;
+    height:75%;
+    border-radius: 50%;
+    box-shadow: inset 0px 3px 2px 1px #c2c2c2;
+}
+
+.scissors {
+    top: calc(2% - 52px);
+    left: calc(49% - 52px);
+    background-image: linear-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+    box-shadow: inset 0px -3px 1px 1px hsl(40, 84%, 43%);
+}
+
+.spock {
+    top: calc(40% - 52px);
+    left: calc(0% - 52px);
+    background-image: linear-gradient(hsl(189, 59%, 53%), hsl(189, 58%, 57%));
+    box-shadow: inset 0px -3px 1px 1px hsl(189, 58%, 37%);
+}
+
+.paper {
+    top: calc(40% - 52px);
+    left: calc(99% - 52px);
+    background-image: linear-gradient(hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+    box-shadow: inset 0px -3px 1px 1px hsl(230, 89%, 56%);
+}
+
+.lizard {
+    top: calc(97% - 52px);
+    left: calc(19% - 52px);
+    background-image: linear-gradient(hsl(261, 73%, 60%), hsl(261, 72%, 63%));
+    box-shadow: inset 0px -3px 1px 1px hsl(261, 72%, 43%);
+}
+
+.rock {
+    top: calc(97% - 52px);
+    left: calc(79% - 52px);
+    background-image: linear-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+    box-shadow: inset 0px -3px 1px 1px hsl(349, 70%, 36%);
+}

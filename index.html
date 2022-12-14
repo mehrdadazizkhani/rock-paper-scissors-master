@@ -5,11 +5,64 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors Lizard Spock</title>
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./styles/styles.css">
     <link rel="icon" href="./favicon-32x32.png">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    
+    <div class="container">
+            <section class="score-area">
+                <img src="./assets/logo-bonus.svg" alt="logo">
+                <div class="score-board">
+                    <p class="score-title">score</p>
+                    <p class="score">12</p>
+                </div>
+            </section>
+            <section class="game-area">
+                <section class="select-stage">
+                    <img class="pentagon" src="./assets/bg-pentagon.svg" alt="pentagon">
+                    <div class="choose scissors">
+                        <div class="choose-bg"><img class="circle" id="0" src="./assets/icon-scissors.svg" alt="scissors"></div>
+                    </div>
+                    <div class="choose spock">
+                        <div class="choose-bg"><img class="circle" id="1" src="./assets/icon-spock.svg" alt="spock"></div>
+                    </div>
+                    <div class="choose paper">
+                        <div class="choose-bg"><img class="circle" id="2" src="./assets/icon-paper.svg" alt="paper"></div>
+                    </div>
+                    <div class="choose lizard">
+                        <div class="choose-bg"><img class="circle" id="3" src="./assets/icon-lizard.svg" alt="lizard"></div>
+                    </div>
+                    <div class="choose rock">
+                        <div class="choose-bg"><img class="circle" id="4" src="./assets/icon-rock.svg" alt="rock"></div>
+                    </div>
+                </section>
+                <section class="result-stage">
+                    <div class="player-col player">
+                        <h3 class="player-name">you picked</h3>
+                        <div class="result-choose player-choose"><div class="choose-bg"></div></div>
+                    </div>
+                    <div class="game-status">
+                        <h2 class="status">you lose</h2>
+                        <button class="restart-btn">play again</button>
+                    </div>
+                    <div class="player-col house">
+                        <h3 class="player-name">the house picked</h3>
+                        <div class="result-choose house-choose"><div class="choose-bg"></div></div>
+                    </div>
+                </section>
+            </section>
+            <button class="rules-btn">rules</button>
+        </div>
+        <section class="rules-body">
+            <div class="rules-container">
+                <header class="rules-header">
+                    <h2 class="rules-title">rules</h2>
+                    <img class="close-btn" src="./assets/icon-close.svg" alt="close button">
+                </header>
+                <img class="rules" src="./assets/image-rules-bonus.svg" alt="rules">
+            </div>
+        </section>
     <script src="./script.js"></script>
 </body>
 </html>
