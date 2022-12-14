@@ -123,11 +123,6 @@
         .pentagon {
             width: 235px;
             aspect-ratio: 1/1;
-
-                    
-            @include desktop {
-                width: 350px;
-            }
         }
         
         .choose {
@@ -138,10 +133,6 @@
             background-color: white;
             border-radius: 50%;
             cursor: pointer;
-
-            @include desktop {
-                width: 160px;
-            }
 
             img {
                 transform: scale(0.7);
@@ -248,11 +239,6 @@
     left: calc(49% - 52px);
     background-image: linear-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%));
     box-shadow: inset 0px -3px 1px 1px hsl(40, 84%, 43%);
-
-    @include desktop {
-        top: calc(2% - 80px);
-        left: calc(49% - 80px);            
-    }
 }
 
 .spock {
@@ -261,10 +247,6 @@
     background-image: linear-gradient(hsl(189, 59%, 53%), hsl(189, 58%, 57%));
     box-shadow: inset 0px -3px 1px 1px hsl(189, 58%, 37%);
 
-    @include desktop {
-        top: calc(40% - 80px);
-        left: calc(0% - 80px);            
-    }
 }
 
 .paper {
@@ -273,10 +255,6 @@
     background-image: linear-gradient(hsl(230, 89%, 62%), hsl(230, 89%, 65%));
     box-shadow: inset 0px -3px 1px 1px hsl(230, 89%, 56%);
 
-    @include desktop {
-        top: calc(40% - 80px);
-        left: calc(99% - 80px);            
-    }
 }
 
 .lizard {
@@ -285,10 +263,6 @@
     background-image: linear-gradient(hsl(261, 73%, 60%), hsl(261, 72%, 63%));
     box-shadow: inset 0px -3px 1px 1px hsl(261, 72%, 43%);
 
-    @include desktop {
-        top: calc(97% - 80px);
-        left: calc(19% - 80px);            
-    }
 }
 
 .rock {
@@ -297,10 +271,6 @@
     background-image: linear-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%));
     box-shadow: inset 0px -3px 1px 1px hsl(349, 70%, 36%);
 
-    @include desktop {
-        top: calc(97% - 80px);
-        left: calc(79% - 80px);            
-    }
 }
 
 

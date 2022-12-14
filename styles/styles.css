@@ -258,12 +258,6 @@
   aspect-ratio: 1/1;
 }
 
-@media screen and (min-width: 700px) {
-  .game-area .select-stage .pentagon {
-    width: 350px;
-  }
-}
-
 .game-area .select-stage .choose {
   position: absolute;
   width: 104px;
@@ -271,12 +265,6 @@
   background-color: white;
   border-radius: 50%;
   cursor: pointer;
-}
-
-@media screen and (min-width: 700px) {
-  .game-area .select-stage .choose {
-    width: 160px;
-  }
 }
 
 .game-area .select-stage .choose img {
@@ -407,13 +395,6 @@
           box-shadow: inset 0px -3px 1px 1px #ca8c12;
 }
 
-@media screen and (min-width: 700px) {
-  .scissors {
-    top: calc(2% - 80px);
-    left: calc(49% - 80px);
-  }
-}
-
 .spock {
   top: calc(40% - 52px);
   left: calc(0% - 52px);
@@ -421,13 +402,6 @@
   background-image: linear-gradient(#40b9ce, #52bed1);
   -webkit-box-shadow: inset 0px -3px 1px 1px #288595;
           box-shadow: inset 0px -3px 1px 1px #288595;
-}
-
-@media screen and (min-width: 700px) {
-  .spock {
-    top: calc(40% - 80px);
-    left: calc(0% - 80px);
-  }
 }
 
 .paper {
@@ -439,13 +413,6 @@
           box-shadow: inset 0px -3px 1px 1px #2b4cf3;
 }
 
-@media screen and (min-width: 700px) {
-  .paper {
-    top: calc(40% - 80px);
-    left: calc(99% - 80px);
-  }
-}
-
 .lizard {
   top: calc(97% - 52px);
   left: calc(19% - 52px);
@@ -455,13 +422,6 @@
           box-shadow: inset 0px -3px 1px 1px #561fbd;
 }
 
-@media screen and (min-width: 700px) {
-  .lizard {
-    top: calc(97% - 80px);
-    left: calc(19% - 80px);
-  }
-}
-
 .rock {
   top: calc(97% - 52px);
   left: calc(79% - 52px);
@@ -469,13 +429,6 @@
   background-image: linear-gradient(#dc2e4e, #dd405d);
   -webkit-box-shadow: inset 0px -3px 1px 1px #9c1c33;
           box-shadow: inset 0px -3px 1px 1px #9c1c33;
-}
-
-@media screen and (min-width: 700px) {
-  .rock {
-    top: calc(97% - 80px);
-    left: calc(79% - 80px);
-  }
 }
 
 .hide {
