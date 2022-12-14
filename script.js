@@ -10,6 +10,7 @@ const resultStage = document.querySelector('.result-stage')
 const scoreBoard = document.querySelector('.score-board')
 const scoreDisplay = document.querySelector('.score')
 const gameStatus = document.querySelector('.status')
+const displayHint = document.querySelector('.display-hint')
 
 let playerChooseClass
 let houseChooseClass
@@ -19,7 +20,7 @@ let houseChooses = ["scissors", "spock", "paper", "lizard", "rock"]
 
 
 rules.classList.add("hide")
-resultStage.style.display = "none";
+// resultStage.style.display = "none";
 
 rulesBtn.addEventListener("click", rulesOpenHandler)
 closeBtn.addEventListener("click", rulesCloseHandler)
@@ -64,8 +65,11 @@ function restartHandler () {
 }
 
 function resetScore () {
+    displayHint.classList.remove("hide")
+    displayHint.classList.add("display-hint")
     score = 0
     scoreDisplay.innerHTML = 0
+    setTimeout(scoreDisplayHint, 3750)
 }
 
 function winner () {
@@ -114,5 +118,12 @@ function winner () {
         }
     }
 
+}
+
+setTimeout(scoreDisplayHint, 3750)
+
+function scoreDisplayHint () {
+    displayHint.classList.remove("display-hint")
+    displayHint.classList.add("hide")
 }
 
